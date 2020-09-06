@@ -13,3 +13,19 @@ ujhgj Platform repository
     - blue-green update
     - reverse rolling update.
 3. Заготовлен DaemonSet для развёртывания node-exporter для worker и master нод.
+
+##### HW #3
+
+1. Task 01
+    1. Создан Service Account bob, выдана роль admin в рамках всего кластера.
+    1. Создан Service Account dave без доступа к кластеру.
+1. Task 02
+    1. Создан Namespace prometheus.
+    1. Создан Service Account carol в этом Namespace.
+    1. Всем Service Account в Namespace prometheus Выдана возможность делать get, list, watch в отношении Pods всего кластера.
+1. Task 03
+    1. Создан Namespace dev.
+    1. Создан Service Account jane в Namespace dev.
+    1. Для jane выдана роль admin в рамках Namespace dev.
+    1. Создан Service Account ken в Namespace dev.
+    1. Для ken выдана роль view в рамках Namespace dev.
