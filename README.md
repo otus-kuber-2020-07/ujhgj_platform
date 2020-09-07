@@ -29,3 +29,15 @@ ujhgj Platform repository
     1. Для jane выдана роль admin в рамках Namespace dev.
     1. Создан Service Account ken в Namespace dev.
     1. Для ken выдана роль view в рамках Namespace dev.
+
+##### HW #4
+
+1. Созданы Deployment с readiness и liveness probes для подов.
+1. Создан сервис, предоставляющий доступ к подам через ClusterIP.
+1. Рассмотрены схемы маршрутизации на базе iptables и IPVS.
+1. Установлен MetalLB, добавлен маршрут для трафика из хостовой системы на MetalLB.
+1. Создан сервис, предоставляющий доступ к подам через MetalLB.
+1. Настроены сервисы (TCP+UDP) типа LoadBalancer, предоставляющий доступ к подам kube-dns.
+1. В кластер установлен nginx-ingress-controller, настроен эндпойнт для тестового приложения через ingress.
+1. В кластер установлен kubernetes-dashboard и настроен ingress для него, предоставляющий доступ по пути /dashboard.
+
