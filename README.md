@@ -41,3 +41,7 @@ ujhgj Platform repository
 1. В кластер установлен nginx-ingress-controller, настроен эндпойнт для тестового приложения через ingress.
 1. В кластер установлен kubernetes-dashboard и настроен ingress для него, предоставляющий доступ по пути /dashboard.
 1. Рассмотрена функция  nginx ingress контроллера включения канареечнего траффика.
+
+##### HW #5
+1. Создан statefulset для minio и headless сервис для доступа к statefulset
+1. Добавлен secret для использованяия в шаблоне пода для minio
