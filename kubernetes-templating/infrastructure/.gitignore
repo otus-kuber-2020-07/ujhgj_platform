@@ -1,0 +1,5 @@
+# Terraform
+.terraform
+
+#service_account with credentials for terraform
+*.json
