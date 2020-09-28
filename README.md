@@ -45,3 +45,21 @@ ujhgj Platform repository
 ##### HW #5
 1. Создан statefulset для minio и headless сервис для доступа к statefulset
 1. Добавлен secret для использованяия в шаблоне пода для minio
+
+##### HW #6
+1. Развёрнут K8s кластер в GKE при помощи Terraform
+1. Установлен чарт nginx-ingress из stable репозитория https://kubernetes-charts.storage.googleapis.com
+1. Установлен чарт jetstack/cert-manager v1.0.2 (вместе с CIDR), добавлен ACME ClusterIssuer
+1. Установлен чарт chartmuseum с tls сертификатом
+1. Создан демо-чарт demosphen, опубликован в chartmuseum
+        
+        helm create demosphen
+        helm package demosphen
+        curl -uchart:museum --data-binary "@demosphen-0.1.0.tgz" https://chartmuseum.35.246.147.156.nip.io/api/charts
+
+а затем установлен в кластере из chartmuseum
+
+        helm repo add my-chartmuseum https://chart:museum@chartmuseum.35.246.147.156.nip.io
+        k create ns demosphen
+        helm upgrade --install demosphen my-chartmuseum/demosphen --wait --namespace=demosphen
+1. Установлен и настроен чарт harbor

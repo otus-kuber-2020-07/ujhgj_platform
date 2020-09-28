@@ -1,0 +1,21 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/acme-challenge-type: http01
+  hosts:
+    - name: chartmuseum.35.246.147.156.nip.io
+      path: /
+      tls: true
+      tlsSecret: chartmuseum.35.246.147.156.nip.io
+
+env:
+  open:
+    DISABLE_API: false
+  secret:
+    # username for basic http authentication
+    BASIC_AUTH_USER: chart
+    # password for basic http authentication
+    BASIC_AUTH_PASS: museum
