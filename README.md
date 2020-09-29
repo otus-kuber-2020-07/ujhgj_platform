@@ -60,6 +60,6 @@ ujhgj Platform repository
 а затем установлен в кластере из chartmuseum
 
         helm repo add my-chartmuseum https://chart:museum@chartmuseum.35.246.147.156.nip.io
-        k create ns demosphen
+        kubectl create ns demosphen
         helm upgrade --install demosphen my-chartmuseum/demosphen --wait --namespace=demosphen
 1. Установлен и настроен чарт harbor
