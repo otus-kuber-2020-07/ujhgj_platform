@@ -63,3 +63,4 @@ ujhgj Platform repository
         kubectl create ns demosphen
         helm upgrade --install demosphen my-chartmuseum/demosphen --wait --namespace=demosphen
 1. Установлен и настроен чарт harbor
+1. Установка nginx-ingress, cert-manager и harbor перенесена в helmfile
