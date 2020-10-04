@@ -65,4 +65,5 @@ ujhgj Platform repository
 1. Установлен и настроен чарт harbor
 1. Установка nginx-ingress, cert-manager и harbor перенесена в helmfile
 1. Создан чарты hipster-shop и frontend, где первый включает в список зависимостей второй, а так же чарт redis от bitnami 
-1. Сервисы paymentservice и shippingservice вынесены из манифеста и сгенерированы через jsonnet, при помощи kubecfg
+1. Сервисы paymentservice и shippingservice вынесены из общего манифеста и сгенерированы через jsonnet, при помощи kubecfg
+1. Сервис cartservice вынесен из общего манифеста из сгенерирован через kustomize с возможностью разделить окружения

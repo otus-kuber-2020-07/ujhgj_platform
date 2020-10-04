@@ -1,0 +1,5 @@
+namePrefix: prod-
+commonLabels:
+  variant: prod
+bases:
+  - ../../base
