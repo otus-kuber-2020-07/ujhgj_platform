@@ -64,3 +64,4 @@ ujhgj Platform repository
         helm upgrade --install demosphen my-chartmuseum/demosphen --wait --namespace=demosphen
 1. Установлен и настроен чарт harbor
 1. Установка nginx-ingress, cert-manager и harbor перенесена в helmfile
+1. Создан чарты hipster-shop и frontend, где первый включает в список зависимостей второй, а так же чарт redis от bitnami 
