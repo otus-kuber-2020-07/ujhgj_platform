@@ -67,3 +67,7 @@ ujhgj Platform repository
 1. Создан чарты hipster-shop и frontend, где первый включает в список зависимостей второй, а так же чарт redis от bitnami 
 1. Сервисы paymentservice и shippingservice вынесены из общего манифеста и сгенерированы через jsonnet, при помощи kubecfg
 1. Сервис cartservice вынесен из общего манифеста из сгенерирован через kustomize с возможностью разделить окружения
+
+##### HW #7
+1. Созданы CustomResourceDefinition и CustomResource для Mysql сервера
+2. Добавлен оператор для Mysql: ServiceAccount, Deployment, ClusterRole и ClusterRoleBinding
