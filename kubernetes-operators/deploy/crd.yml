@@ -33,11 +33,14 @@ spec:
                   type: string
                 storage_size:
                   type: string
+                storage_class_name:
+                  type: string
               required:
                 - image
                 - database
                 - password
                 - storage_size
+                - storage_class_name
 
   names: # различные форматы имени объекта CR
     kind: MySQL # kind CR
