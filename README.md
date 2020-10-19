@@ -67,3 +67,28 @@ ujhgj Platform repository
 1. Создан чарты hipster-shop и frontend, где первый включает в список зависимостей второй, а так же чарт redis от bitnami 
 1. Сервисы paymentservice и shippingservice вынесены из общего манифеста и сгенерированы через jsonnet, при помощи kubecfg
 1. Сервис cartservice вынесен из общего манифеста из сгенерирован через kustomize с возможностью разделить окружения
+
+##### HW #7
+1. Созданы CustomResourceDefinition и CustomResource для Mysql сервера
+2. Доработал оператор из примера в ДЗ.
+
+Оператор написан на Kopf (Python) и создаёт Service, Deployment, а так же по два PV и PVC
+для хранилища Mysql и для бэкапа. Оператор бэкапит базу при удалении CustomResource, а при создании CustomResource 
+пытается восстановить базу из бэкапа, управляя ресурсами типа Job:
+ ```
+k get jobs
+NAME                         COMPLETIONS   DURATION   AGE
+backup-mysql-instance-job    1/1           2s         2m32s
+restore-mysql-instance-job   1/1           15m        16m
+```
+В паке `test` есть два скрипт: `fill_db.sh` заполняет базу данными, а `select_test.sh` получает данные из базы.
+```
++----+-------------+
+| id | name        |
++----+-------------+
+|  1 | some data   |
+|  2 | some data-2 |
++----+-------------+
+```
+Чтобы задеплоить оператор в кластер создаются ServiceAccount, ClusterRole и ClusterRoleBinding и Deployment.
+Исходники и Dockerfile находятся в директории `build`. 
